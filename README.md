@@ -44,8 +44,11 @@ Ideally, we expected the unaligned words to have distributed attention across ot
 For the Attention based LSTM, we generated 4 different features as below. The ﬁnal linear layer used these 4 features to determine the duplicate output probability. The coefﬁcients of these features are also provided beside them to indicate their relative importance in identifying duplicates. 
 
 • Cosine Similarity of Attention weighted embeddings - 9.2 
+
 • Bilinear layer output to identify differences in embeddings - (-6.8) 
+
 • Cross Alignment Similarity of Question 1 with Question 2 - 0.58 
+
 • Cross Alignment Similarity of Question 2 with Question 1 - 0.5 
 
 The above weights show that the ﬁrst 2 features of weighted attention and difference identiﬁcation were signiﬁcant in identifying the duplicates compared to the cross alignment features which were of less use. This gives us an accuracy of 80.5%, Precision of 0.72, Recall of 0.76 and an F1 Score of 0.74. The ROC curve of the same is given below with an AUC of 0.88.
