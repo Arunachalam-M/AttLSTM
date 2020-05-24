@@ -18,19 +18,19 @@ Complete Model for Duplicate detection
 
 The primary purpose of this model was to give insights into the interpretability of the model and some amount of information extraction. The architecture is also designed to be more generalizable across many applications by avoiding leakage features. After 5 epochs of training, I got a trainingaccuracy of 84% in the duplicate detection problem. I also got a 80.5% accuracy in the test set. The results in Information extraction and summarization also seem promising. The observations and results regarding the same are provided below.
 
-![Attention Results 1](https://github.com/Arunachalam-M/AttLSTM/blob/master/1.png)
+![Attention Results 1](https://github.com/Arunachalam-M/AttLSTM/blob/master/1.jpg)
 
 In the above sentence "I made the mistake of searching his social media and now I think he is too happy for me. Any words to make me feel better?", the words 'mistake', 'searching', 'social', 'media', 'words', 'feel', 'better' are given attention over the threshold. So the above sentence will be summarized as 'mistake searching social media words feel better' which is a reasonable summarization of the request with little details left out.
 
-![Attention Results 2](https://github.com/Arunachalam-M/AttLSTM/blob/master/2.png)
+![Attention Results 2](https://github.com/Arunachalam-M/AttLSTM/blob/master/2.jpg)
 
 Similarly in the above example we see the sentence 'What is the most intelligent thing a kid has ever said to you?' being summarized as 'most intelligent thing kid ever said you' which is also a pretty accurate summarization of the sentence.
 
 Aside from summarization, we can also see how the model identiﬁes duplicates by assigning attention in the following example.
 
-![Attention Results 3](https://github.com/Arunachalam-M/AttLSTM/blob/master/3.png)
+![Attention Results 3](https://github.com/Arunachalam-M/AttLSTM/blob/master/3.jpg)
 
-![Attention Results 4](https://github.com/Arunachalam-M/AttLSTM/blob/master/4.png)
+![Attention Results 4](https://github.com/Arunachalam-M/AttLSTM/blob/master/4.jpg)
 
 
 This was a duplicate question pair. The model predicted it correctly assigning it a 78% chance of being duplicates. But it is interesting to note that in addition to all the key words in the sentence, it assigned attention to 'Where' in the ﬁrst question but didn't assign attention to 'What' in the second question. We can see that the second question can be summarized easily as 'Digital Marketing Course Beginners' without the 'What'. But 'where' is essential to signify the source of the digital marketing course as that was an important part of the intent of the question.
